@@ -3,7 +3,6 @@ const express = require('express');
 const ServiceRegistry = require('./lib/ServiceRegistry');
 
 const service = express();
-// const ServiceRegistry = require('./ServiceRegistry');
 
 module.exports = (config) => {
   const log = config.log();
@@ -14,6 +13,7 @@ module.exports = (config) => {
   if (service.get('env') === 'development') {
     service.use((req, res, next) => {
       log.debug(`${req.method}: ${req.url}`);
+
       return next();
     });
   }
