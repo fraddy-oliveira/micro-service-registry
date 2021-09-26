@@ -2,8 +2,10 @@
 
 const http = require('http');
 
+//  @TODO : fetch config using .env file
 const config = require('../config')[process.env.NODE_ENV || 'development'];
 
+//  @TODO : try to create abstraction layer for logging
 const log = config.log();
 
 const service = require('../server/service')(config);

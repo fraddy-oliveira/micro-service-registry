@@ -23,7 +23,7 @@ module.exports = (config) => {
     (req, res) => {
       const { serviceName, serviceVersion, servicePort } = req.params;
 
-      //  DODO: find remote ip
+      //  @TODO : check if req.connection is deprecated and find solution
       const ip = req.connection.remoteAddress.includes('::') ? `[${req.connection.remoteAddress}]` : req.connection.remoteAddress;
 
       const serviceKey = serviceRegistry.register(serviceName, serviceVersion, ip, servicePort);
@@ -37,7 +37,6 @@ module.exports = (config) => {
     (req, res) => {
       const { serviceName, serviceVersion, servicePort } = req.params;
 
-      //  DODO: find remote ip
       const ip = req.connection.remoteAddress.includes('::') ? `[${req.connection.remoteAddress}]` : req.connection.remoteAddress;
 
       serviceRegistry.unregister(serviceName, serviceVersion, ip, servicePort);
