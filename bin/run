@@ -4,8 +4,9 @@ const http = require('http');
 
 const config = require('../config');
 
-//  @TODO : try to create abstraction layer for logging
-const log = config.log();
+const { logger } = require('../server/lib/loggers');
+
+const log = logger();
 
 const service = require('../server/service')(config);
 

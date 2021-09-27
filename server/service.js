@@ -1,11 +1,14 @@
 const express = require('express');
 
+const { logger } = require('../server/lib/loggers');
+
 const ServiceRegistry = require('./lib/ServiceRegistry');
 
 const service = express();
 
+// eslint-disable-next-line no-unused-vars
 module.exports = (config) => {
-  const log = config.log();
+  const log = logger();
 
   const serviceRegistry = new ServiceRegistry(log);
 
