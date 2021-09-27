@@ -2,7 +2,6 @@
 
 const http = require('http');
 
-//  @TODO : fetch config using .env file
 const config = require('../config');
 
 //  @TODO : try to create abstraction layer for logging
