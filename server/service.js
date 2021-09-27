@@ -23,8 +23,7 @@ module.exports = (config) => {
     (req, res) => {
       const { serviceName, serviceVersion, servicePort } = req.params;
 
-      //  @TODO : check if req.connection is deprecated and find solution
-      const ip = req.connection.remoteAddress.includes('::') ? `[${req.connection.remoteAddress}]` : req.connection.remoteAddress;
+      const ip = req.socket.remoteAddress.includes('::') ? `[${req.socket.remoteAddress}]` : req.socket.remoteAddress;
 
       const serviceKey = serviceRegistry.register(serviceName, serviceVersion, ip, servicePort);
 
