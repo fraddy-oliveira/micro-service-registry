@@ -7,6 +7,5 @@ module.exports = {
   port: process.env.PORT || 3000,
   name,
   version,
-  serviceTimeout: process.env.SERVICE_TIMEOUT,
   logLevel: process.env.LOG_LEVEL,
 };
