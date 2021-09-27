@@ -41,7 +41,7 @@ module.exports = (config) => {
     (req, res) => {
       const { serviceName, serviceVersion, servicePort } = req.params;
 
-      const ip = req.connection.remoteAddress.includes('::') ? `[${req.connection.remoteAddress}]` : req.connection.remoteAddress;
+      const ip = req.socket.remoteAddress.includes('::') ? `[${req.socket.remoteAddress}]` : req.socket.remoteAddress;
 
       serviceRegistry.unregister(serviceName, serviceVersion, ip, servicePort);
 
