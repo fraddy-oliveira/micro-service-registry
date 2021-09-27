@@ -1,5 +1,7 @@
 const express = require('express');
 
+const { env } = require('../config');
+
 const { logger } = require('../server/lib/loggers');
 
 const ServiceRegistry = require('./lib/ServiceRegistry');
@@ -13,7 +15,7 @@ module.exports = (config) => {
   const serviceRegistry = new ServiceRegistry(log);
 
   // Add a request logging middleware in development mode
-  if (service.get('env') === 'development') {
+  if (env === 'development') {
     service.use((req, res, next) => {
       log.debug(`${req.method}: ${req.url}`);
 
