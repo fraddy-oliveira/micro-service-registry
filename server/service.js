@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { env } = require('../config');
+const { env } = require('../config/app');
 
 const { logger } = require('../server/lib/loggers');
 
