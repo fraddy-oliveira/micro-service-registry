@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "A generic service registry for Node.js",
   "scripts": {
-    "start": "node bin/run | bunyan"
+    "start": "node bin/run | bunyan",
+    "dev": "node -r dotenv/config bin/run | bunyan"
   },
   "keywords": [],
   "author": "Fraddy Oliveira",
@@ -16,6 +17,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
+    "dotenv": "^10.0.0",
     "eslint": "^5.14.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0"

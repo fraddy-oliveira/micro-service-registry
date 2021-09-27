@@ -3,7 +3,7 @@
 const http = require('http');
 
 //  @TODO : fetch config using .env file
-const config = require('../config')[process.env.NODE_ENV || 'development'];
+const config = require('../config');
 
 //  @TODO : try to create abstraction layer for logging
 const log = config.log();
@@ -12,7 +12,7 @@ const service = require('../server/service')(config);
 
 const server = http.createServer(service);
 
-server.listen(process.env.PORT || 3000);
+server.listen(config.port);
 
 server.on('listening', () => {
   log.info(

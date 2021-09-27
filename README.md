@@ -16,5 +16,5 @@ A standalone project that implements service registry pattern. Service Registry 
     git clone https://github.com/fraddy-oliveira/micro-service-registry.git
     cd micro-service-registry
     npm install
-    npm start
+    npm dev
 ```
